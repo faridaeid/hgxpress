@@ -1,0 +1,23 @@
+<launch>
+
+    <node name="super_master_node"
+          pkg="hogwarts_cart"
+          type="super_master_node.py"
+          output="screen"/>
+
+    <node name="motor_controller_node"
+          pkg="hogwarts_cart"
+          type="motor_controller_node.py"
+          output = "screen"/>
+
+    <node name="usb_cam"
+          pkg="usb_cam"
+          type="usb_cam_node"
+          output = "log">
+
+          <param name = "image_width" value = "320"/>
+          <param name = "image_height" value = "240"/>
+
+    </node>
+
+</launch>

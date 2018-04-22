@@ -1,0 +1,14 @@
+<launch>
+
+    <node name="slider"
+          pkg="hogwarts_express"
+          type="slider.py"
+          output="screen"/>
+
+    <node name="hsv_color_segmentation"
+          pkg="hogwarts_express"
+          type="hsv_color_segmentation.py"
+          output="screen"/>
+
+
+</launch>

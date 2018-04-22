@@ -1,0 +1,11 @@
+<launch>
+
+    <include file="$(find navigation)/my_robot_config_launch.launch"></include>
+    <include file="$(find navigation)/move_base.launch"></include>
+
+    <node name="navigation_controller_node"
+          pkg="hogwarts_express"
+          type="navigation_controller.py"
+          output="screen"/>
+
+</launch>
