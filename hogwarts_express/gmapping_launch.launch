@@ -3,7 +3,7 @@
     <node pkg="tf"
           type="static_transform_publisher"
           name="tf_laser_frame"
-          args="0 0 0 0 0 0 base_link laser_frame 100"/>
+          args="0 0.09 0 0 0 0 base_link laser_frame 100"/>
 
     <include file="$(find sweep_ros)/launch/sweep2scan.launch"></include>
 
@@ -11,7 +11,10 @@
           pkg="gmapping"
           type="slam_gmapping"
           output="screen">
-        <param name="minimumScore" value="30"/>
+        <param name="minimumScore" value="50"/>
+        <param name="map_update_interval" value="0.5"/>
+        <param name="linearUpdate" value="0.25"/>
+        <param name="angularUpdate" value="0.2"/>
     </node>
 
     <include file = "$(find ca_driver)/launch/create_2.launch"></include>

@@ -8,12 +8,12 @@ from pid import PID
 
 
 class PidController:
-    def __init__(self):
+    def __init__(self, setpoint):
 
         self.speed_pub = rospy.Publisher("motor/speed_motors", Int32MultiArray)
 
         self.pid = PID(0.3, 0.0, 0.0)
-        self.pid.set_setpoint(160)
+        self.pid.set_setpoint(setpoint)
         self.constant_speed = 54
 
 
@@ -29,9 +29,12 @@ class PidController:
 
         self.speed_pub.publish(speeds)
 
+    def update_setpoint(self, value):
+        self.pid.set_setpoint(value)
 
     def set_speed(self, speed):
         self.constant_speed = speed
+
 
     def stop_pid(self):
 

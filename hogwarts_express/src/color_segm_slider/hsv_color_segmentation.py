@@ -35,15 +35,29 @@ class HSVColorSegmentation(object):
     def values_extract(self, data):
 
         vals = np.array(data.data)
+        print vals
 
         hsv = cv2.cvtColor(self.image, cv2.COLOR_BGR2HSV)
         print (vals, self.count)
         self.count = self.count + 1
+        print(vals)
         result = cv2.inRange(hsv, np.array([vals[0], vals[1], vals[2]]), np.array([vals[3], vals[4], vals[5]]))
+        # res = cv2.GaussianBlur(result, (5,5)  , 0)
+
+
+        mask1 = cv2.inRange(hsv, np.array([138, 67, 72]), np.array([179, 191, 160]))
+        mask2 = cv2.inRange(hsv, np.array([143, 26, 192]), np.array([179, 169, 255]))
+        mask3 = cv2.inRange(hsv, np.array([25, 0, 19]), np.array([42, 152, 255]))
+
+
+        # result = cv2.bitwise_or(mask1, mask2)
 
         try:
+            #
+            # cv2.imshow('hsv', result)
+            # cv2.waitKey(1)
 
-            self.image_hsv.publish(self.bridge.cv2_to_imgmsg(result, "passthrough"))
+            self.image_hsv.publish(self.bridge.cv2_to_imgmsg(result, "8UC1"))
 
         except CvBridgeError as e:
             print(e)

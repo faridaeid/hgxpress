@@ -8,4 +8,13 @@
           type="navigation_controller.py"
           output="screen"/>
 
+    <node name="lidar_republisher"
+          pkg="hogwarts_express"
+          type="lidar_republisher.py"/>
+
+    <node name="request_handler_node"
+          pkg="hogwarts_express"
+          type="request_handler.py"
+          output="screen"/>
+
 </launch>

@@ -17,9 +17,8 @@ class InitialPosePublisher(object):
         initial_pose.header.frame_id = "map"
         initial_pose.header.stamp = rospy.Time.now()
 
-        point = Point(100.635, 106.995, 0.000)
-        orientation = Quaternion(0.000, 0.000, -0.695, 0.719)
-
+        point = Point(96.546, 93.783, 0.000)
+        orientation = Quaternion(0.000, 0.000, -0.170, 0.985)
         initial_pose.pose.pose.position = point
         initial_pose.pose.pose.orientation = orientation
 

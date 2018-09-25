@@ -2,36 +2,36 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ab670883-bf84-441d-8c63-43beedc2803a" name="Gryffindor" url="http://192.168.1.82">
-        <fileTransfer host="192.168.1.82" port="22" accessType="SFTP">
+      <webServer id="f1ca9111-2644-4ba9-9274-c97f55137106" name="gryff" url="http://172.20.10.9">
+        <fileTransfer host="172.20.10.9" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
-      <webServer id="74048fbb-e0f8-45a5-b60b-b69df397801a" name="Slytherin">
-        <fileTransfer port="21">
+      <webServer id="38df26b2-2415-4258-8d33-44278029ead1" name="raven" url="http://172.20.10.7">
+        <fileTransfer host="172.20.10.7" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
-      <webServer id="40e71df5-6b3c-4114-97eb-ddf700a5f4e3" name="Huffelpuff">
-        <fileTransfer port="21">
+      <webServer id="27b47ab5-0312-4db2-8d9d-87b32cbd1489" name="huff" url="http://172.20.10.10">
+        <fileTransfer host="172.20.10.10" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
-      <webServer id="67fd6666-bfee-4c92-90aa-d68e09d3d5d4" name="Ravenclaw">
-        <fileTransfer port="21">
+      <webServer id="9c4da552-1897-40c8-bcbf-1382da3af223" name="slyth" url="http://172.20.10.11">
+        <fileTransfer host="172.20.10.11" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

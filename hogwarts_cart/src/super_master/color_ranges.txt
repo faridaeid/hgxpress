@@ -1,0 +1,14 @@
+RED night
+
+np.array([138, 67, 72]), np.array([179, 191, 160])
+np.array([143, 0, 192]), np.array([179, 169, 255])
+
+
+np.array([0,32,215]), np.array([81,255,241])
+np.array([0,33,146]), np.array([44,81,255])
+
+
+
+red
+
+shadow 0, 46, 100, 14, 255, 255

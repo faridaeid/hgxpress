@@ -1,0 +1,8 @@
+<launch>
+   <include file = "$(find sweep_ros)/launch/sweep2scan.launch"></include>
+
+   <include file = "$(find ca_driver)/launch/create_2.launch"></include>
+
+   <node pkg="tf" type="static_transform_publisher" name="tf_laser_frame" output="screen" args="0 0 0 0 0 0 base_link laser_frame 100"/>
+
+</launch>

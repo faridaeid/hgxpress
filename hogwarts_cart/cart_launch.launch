@@ -1,0 +1,36 @@
+<launch>
+
+    <arg name="cart_name"/>
+
+    <node name="master_discovery"
+          pkg="master_discovery_fkie"
+          type="master_discovery"
+          output="screen">
+
+        <param name="mcast_group" value="224.0.0.1"/>
+
+    </node>
+
+    <node name="master_sync"
+          pkg="master_sync_fkie"
+          type="master_sync"
+          output="screen">
+
+        <!--<rosparam param="sync_hosts">[192.168.1.82]</rosparam>-->
+        <rosparam param="ignore_nodes">[/usb_cam, /super_master_node]</rosparam>
+        <!--<rosparam param="sync_nodes">['/request_handler']</rosparam>-->
+        <!--<rosparam param="ignore_nodes">[/usb_cam]</rosparam>-->
+        <rosparam param="sync_topics" subst_value="true">
+            [/$(arg cart_name)/follow_color, /$(arg cart_name)/detach, /requests]
+        </rosparam>
+
+    </node>
+
+    <include file="$(find hogwarts_cart)/launch_file.launch">
+
+        <arg name="cart_name" value="$(arg cart_name)"/>
+
+    </include>
+
+</launch>
+
